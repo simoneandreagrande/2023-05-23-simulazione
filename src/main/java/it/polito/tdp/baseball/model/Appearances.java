@@ -13,9 +13,41 @@ public class Appearances {
     private Integer gamesDefense;
     private Integer gamesPitcher;
     private Integer gamesCatcher;
+    
 
+    /**
+     * Costruttore
+     * @param iD
+     * @param year
+     * @param teamCode
+     * @param teamID
+     * @param playerID
+     * @param games
+     * @param gamesStarted
+     * @param gamesBatting
+     * @param gamesDefense
+     * @param gamesPitcher
+     * @param gamesCatcher
+     */
+    public Appearances(Integer iD, Integer year, String teamCode, Integer teamID, String playerID, Integer games,
+			Integer gamesStarted, Integer gamesBatting, Integer gamesDefense, Integer gamesPitcher,
+			Integer gamesCatcher) {
+		super();
+		this.iD = iD;
+		this.year = year;
+		this.teamCode = teamCode;
+		this.teamID = teamID;
+		this.playerID = playerID;
+		this.games = games;
+		this.gamesStarted = gamesStarted;
+		this.gamesBatting = gamesBatting;
+		this.gamesDefense = gamesDefense;
+		this.gamesPitcher = gamesPitcher;
+		this.gamesCatcher = gamesCatcher;
+	}
+    
 
-    public Integer getID(){
+	public Integer getID(){
         return iD;
     }
 

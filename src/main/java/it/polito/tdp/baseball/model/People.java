@@ -181,10 +181,13 @@ public class People {
 		People other = (People) obj;
 		return Objects.equals(playerID, other.playerID);
 	}
-    
-    
-    
 
+	@Override
+	public String toString() {
+		return nameFirst + " " + nameLast;
+	}
+    
+    
 
 }
 

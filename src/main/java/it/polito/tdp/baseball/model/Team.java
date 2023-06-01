@@ -244,6 +244,13 @@ public class Team {
 		Team other = (Team) obj;
 		return Objects.equals(iD, other.iD);
 	}
+
+
+
+	@Override
+	public String toString() {
+		return teamCode;
+	}
     
     
 
