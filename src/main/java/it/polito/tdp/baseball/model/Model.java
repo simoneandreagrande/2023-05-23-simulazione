@@ -19,7 +19,7 @@ public class Model {
 	private BaseballDAO dao;
 	private Graph<People, DefaultEdge> grafo;
 	private Map<Integer, Team> teamsIDMap;
-	private Map<String, People> playersIDMap;
+	private Map<String, People> playersIDMap; // map associata ai giocatori
 	
 	private Map<People, Double> salariesIDMap;
 	private Map<People, List<Team>> playerTeamsMap;
@@ -30,11 +30,14 @@ public class Model {
 	public Model() {
 		this.dao = new BaseballDAO();
 		this.teamsIDMap = new HashMap<Integer, Team>();
+		
+		// scorriamo le squadre e inseriamo le squadre in una mappa di squadre (da chiave primaria che è integer)
 		List<Team> squadre = this.dao.readAllTeams();
 		for (Team t : squadre) {
 			this.teamsIDMap.put(t.getID(), t);
 		}
 		
+		// mettiamo nella mappa i giocatori presi dal database
 		this.playersIDMap = new HashMap<String, People>();
 		List<People> giocatori = this.dao.readAllPlayers();
 		for (People p : giocatori) {
@@ -93,6 +96,8 @@ public class Model {
 	}
 	
 	
+	
+	// importante
 	/**
 	 * Secondo metodo per creare il grafo, calcolando gli archi in java
 	 * @param anno

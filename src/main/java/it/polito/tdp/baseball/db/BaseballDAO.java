@@ -14,6 +14,8 @@ import it.polito.tdp.baseball.model.Arco;
 import it.polito.tdp.baseball.model.People;
 import it.polito.tdp.baseball.model.Team;
 
+// prendo dati dal db
+
 
 public class BaseballDAO {
 	
@@ -116,6 +118,13 @@ public class BaseballDAO {
 				+ "WHERE p.playerID = s.playerID AND s.year=? "
 				+ "Group By p.playerID " 
 				+ "HAVING salaryTot > ?";
+		
+//		SELECT s.playerID, SUM(s.salary) as salaryTot
+//		FROM salaries s
+//		WHERE s.year = 2010
+//		GROUP BY s.playerID
+//		HAVING salaryTot>5000000
+		
 		List<People> result = new ArrayList<People>();
 
 		try {
@@ -258,6 +267,10 @@ public class BaseballDAO {
 		}
 	}
 	
+	
+	
+	// importante, prendo dal database info riguardo alle presenze di un giocatore per una certa suqadra
+	// e le metto in una lista di appearances.
 	
 	/**
 	 * Metodo che restituisce una lista di apparizioni fatte dai giocatori nell'anno selezionato
