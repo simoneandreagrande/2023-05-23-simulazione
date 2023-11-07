@@ -114,7 +114,7 @@ public class FXMLController {
     @FXML
     void doGradoMassimo(ActionEvent event) {
     	List<Grado> gradoMassimo = this.model.calcolaGradoMassimo();
-    	this.txtResult.appendText("\nI vertice di grado massimo sono: \n");
+    	this.txtResult.appendText("\nI vertici di grado massimo sono: \n");
     	for (Grado g : gradoMassimo) {
     		this.txtResult.appendText(g+"\n");
     	}
